@@ -27,7 +27,7 @@ Add `callback` listener to `event`.
 
 Remove `callback` listener from `event`.
 
-### emitter.emit(event [, data1, dat2, ..., ])
+### emitter.emit(event [, data1, data2, ..., dataN])
 
 Emit `event` with (or without) data.
 
