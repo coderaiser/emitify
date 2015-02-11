@@ -33,11 +33,11 @@ Emit `event` with (or without) data.
 
 ### emitter.addListener(event, callback)
 
-Alias to [emitter.on](#emitter.on).
+Alias to `emitter.on`.
 
 ### emitter.removeListener(event, callback)
 
-Alias to [emitter.off](#emitter.off).
+Alias to `emitter.off`.
 
 ## How to use?
 
