@@ -45,7 +45,7 @@
                 emitify.emit('error', Error('Some error!'));
             };
        
-       t.throws(fn, /Some error!/, 'shoul throw exception');
+       t.throws(fn, /Some error!/, 'should throw exception');
        t.end();
     });
     
@@ -64,4 +64,23 @@
         t.end();
     });
     
+    test('on, addListener: no arguments', t => {
+        let emitify = Emitify(),
+            fn  = function() {
+                emitify.on();
+            };
+       
+       t.throws(fn, /event should be string!/, 'should throw when not string');
+       t.end();
+    });
+    
+    test('on, addListener: no listener', t => {
+        let emitify = Emitify(),
+            fn  = function() {
+                emitify.on('error');
+            };
+       
+       t.throws(fn, /callback should be function!/, 'should throw when not function');
+       t.end();
+    });
 })();
