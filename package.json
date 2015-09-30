@@ -4,7 +4,7 @@
   "description": "dead simple event emitter",
   "main": "lib/emitify.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "tape test/*.js"
   },
   "repository": {
     "type": "git",
@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/coderaiser/emitify/issues"
   },
-  "homepage": "https://github.com/coderaiser/emitify"
+  "homepage": "https://github.com/coderaiser/emitify",
+  "devDependencies": {
+    "tape": "~4.2.0"
+  }
 }
