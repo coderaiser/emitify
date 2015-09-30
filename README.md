@@ -51,8 +51,6 @@ var Emitify = require('emitify'),
 emitter.on('data', log);
 
 emitter.emit('data', 'hello');
-// result
-'hello'
 
 emitter.off('data', log);
 
