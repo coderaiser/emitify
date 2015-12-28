@@ -27,6 +27,7 @@
   "homepage": "https://github.com/coderaiser/emitify",
   "devDependencies": {
     "coveralls": "^2.11.6",
+    "jshint": "^2.8.0",
     "npm-run-all": "^1.4.0",
     "nyc": "^5.0.1",
     "tape": "^4.4.0"
