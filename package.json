@@ -21,6 +21,6 @@
   },
   "homepage": "https://github.com/coderaiser/emitify",
   "devDependencies": {
-    "tape": "~4.2.0"
+    "tape": "^4.4.0"
   }
 }
