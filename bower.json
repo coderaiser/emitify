@@ -6,7 +6,7 @@
     "coderaiser <mnemonic.enemy@gmail.com>"
   ],
   "description": "Dead simple event emitter",
-  "main": "lib/emitify.js",
+  "main": "dist/emitify.min.js",
   "moduleType": [
     "globals",
     "node"
