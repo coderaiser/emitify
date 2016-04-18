@@ -33,7 +33,7 @@
   "devDependencies": {
     "browserify": "^13.0.0",
     "coveralls": "^2.11.6",
-    "jscs": "~3.0.3",
+    "jscs": "^3.0.3",
     "jshint": "^2.8.0",
     "minify": "^2.0.2",
     "npm-run-all": "^1.4.0",
