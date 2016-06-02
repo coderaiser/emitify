@@ -79,6 +79,32 @@ test('off', t => {
     t.end();
 });
 
+test('removeAllListeners', t => {
+    let emitify = Emitify(),
+        fn      = () => {
+            t.fail('listener should be off');
+        };
+    
+    emitify
+        .on('event', fn)
+        .on('event', fn)
+        .removeAllListeners('event');
+    
+    emitify.emit('event');
+    
+    t.end();
+});
+
+test('removeAllListeners: no arguments', t => {
+    let emitify = Emitify(),
+        fn  = () => {
+            emitify.removeAllListeners();
+        };
+   
+   t.throws(fn, /event should be string!/, 'should throw when not string');
+   t.end();
+});
+
 test('on, addListener: no arguments', t => {
     let emitify = Emitify(),
         fn  = function() {
