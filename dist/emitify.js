@@ -87,7 +87,7 @@ Emitify.prototype.removeAllListeners = function(event) {
     this._all[event] = [];
     
     return this;
-}
+};
 
 
 },{}]},{},["emitify"])("emitify")
