@@ -43,13 +43,14 @@ test('addListener, add second one', t => {
 test('once', t => {
     let emitify = Emitify(),
         was,
-        fn      = () => {
+        fn      = (data) => {
             was && t.fail('listener should be off');
+            t.equal(data, 'hello');
             was = true;
         };
     
     emitify.once('event', fn);
-    emitify.emit('event');
+    emitify.emit('event', 'hello');
     
     t.end();
 });
