@@ -128,3 +128,14 @@ test('on, addListener: no listener', (t) => {
     t.throws(fn, /callback should be function!/, 'should throw when not function');
     t.end();
 });
+
+test('emit: no listeners', (t) => {
+    const emitify = Emitify();
+    const fn = () => {
+        return emitify.emit('hello');
+    };
+    
+    t.equal(fn(), emitify, 'should return emitify');
+   
+    t.end();
+});
