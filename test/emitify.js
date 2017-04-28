@@ -1,10 +1,10 @@
 'use strict';
 
-let Emitify = require('..'),
-    test    = require('tape');
+const Emitify = require('..');
+const test = require('tape');
 
-test('on', t => {
-    let emitify = Emitify();
+test('on', (t) => {
+    const emitify = Emitify();
     
     emitify.on('event', () => {
         t.end();
@@ -13,8 +13,8 @@ test('on', t => {
     emitify.emit('event');
 });
 
-test('addListener', t => {
-    let emitify = Emitify();
+test('addListener', (t) => {
+    const emitify = Emitify();
     
     emitify.addListener('event', () => {
         t.end();
@@ -23,10 +23,13 @@ test('addListener', t => {
     emitify.emit('event');
 });
 
-test('addListener, add second one', t => {
-    let emitify = Emitify();
-    let value   = 0;
-    let inc     = () => ++value;
+test('addListener, add second one', (t) => {
+    let value = 0;
+    
+    const emitify = Emitify();
+    const inc = () => {
+        return ++value;
+    };
     
     emitify.addListener('run', () => {
         t.equal(inc(), 1);
@@ -40,14 +43,14 @@ test('addListener, add second one', t => {
     emitify.emit('run');
 });
 
-test('once', t => {
-    let emitify = Emitify(),
-        was,
-        fn      = (data) => {
-            was && t.fail('listener should be off');
-            t.equal(data, 'hello');
-            was = true;
-        };
+test('once', (t) => {
+    let was;
+    const emitify = Emitify();
+    const fn = (data) => {
+        was && t.fail('listener should be off');
+        t.equal(data, 'hello');
+        was = true;
+    };
     
     emitify.once('event', fn);
     emitify.emit('event', 'hello');
@@ -55,18 +58,18 @@ test('once', t => {
     t.end();
 });
 
-test('on error: no listeners', t => {
-    let emitify = Emitify(),
-        fn  = function() {
-            emitify.emit('error', Error('Some error!'));
-        };
+test('on error: no listeners', (t) => {
+    const emitify = Emitify();
+    const fn  = () => {
+        emitify.emit('error', Error('Some error!'));
+    };
    
-   t.throws(fn, /Some error!/, 'should throw exception');
-   t.end();
+    t.throws(fn, /Some error!/, 'should throw exception');
+    t.end();
 });
 
-test('off', t => {
-    let emitify = Emitify(),
+test('off', (t) => {
+    const emitify = Emitify(),
         fn      = () => {
             t.fail('listener should be off');
         };
@@ -80,8 +83,8 @@ test('off', t => {
     t.end();
 });
 
-test('removeAllListeners', t => {
-    let emitify = Emitify(),
+test('removeAllListeners', (t) => {
+    const emitify = Emitify(),
         fn      = () => {
             t.fail('listener should be off');
         };
@@ -96,32 +99,32 @@ test('removeAllListeners', t => {
     t.end();
 });
 
-test('removeAllListeners: no arguments', t => {
-    let emitify = Emitify(),
-        fn  = () => {
-            emitify.removeAllListeners();
-        };
+test('removeAllListeners: no arguments', (t) => {
+    const emitify = Emitify();
+    const fn = () => {
+        emitify.removeAllListeners();
+    };
    
-   t.throws(fn, /event should be string!/, 'should throw when not string');
-   t.end();
+    t.throws(fn, /event should be string!/, 'should throw when not string');
+    t.end();
 });
 
-test('on, addListener: no arguments', t => {
-    let emitify = Emitify(),
-        fn  = function() {
-            emitify.on();
-        };
+test('on, addListener: no arguments', (t) => {
+    const emitify = Emitify();
+    const fn = () => {
+        emitify.on();
+    };
    
-   t.throws(fn, /event should be string!/, 'should throw when not string');
-   t.end();
+    t.throws(fn, /event should be string!/, 'should throw when not string');
+    t.end();
 });
 
-test('on, addListener: no listener', t => {
-    let emitify = Emitify(),
-        fn  = function() {
-            emitify.on('error');
-        };
+test('on, addListener: no listener', (t) => {
+    const emitify = Emitify();
+    const fn = () => {
+        emitify.on('error');
+    };
    
-   t.throws(fn, /callback should be function!/, 'should throw when not function');
-   t.end();
+    t.throws(fn, /callback should be function!/, 'should throw when not function');
+    t.end();
 });
