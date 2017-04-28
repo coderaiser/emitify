@@ -1,6 +1,6 @@
 {
   "name": "emitify",
-  "version": "2.1.1",
+  "version": "3.0.0",
   "description": "dead simple event emitter",
   "main": "lib/emitify.js",
   "babel": {
