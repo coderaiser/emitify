@@ -1,4 +1,5 @@
 .*
 test
 coverage
+webpack.config.js
 
