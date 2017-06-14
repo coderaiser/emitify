@@ -45,7 +45,7 @@
     "babel-loader": "^7.0.0",
     "babel-preset-es2015": "^6.24.1",
     "coveralls": "^2.11.6",
-    "eslint": "^3.19.0",
+    "eslint": "^4.0.0",
     "jscs": "^3.0.3",
     "jshint": "^2.8.0",
     "nodemon": "^1.11.0",
