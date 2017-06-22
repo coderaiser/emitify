@@ -52,7 +52,7 @@
     "nyc": "^11.0.2",
     "redrun": "^5.0.1",
     "tape": "^4.4.0",
-    "webpack": "^2.5.1"
+    "webpack": "^3.0.0"
   },
   "dependencies": {}
 }
