@@ -1,10 +1,6 @@
 'use strict';
 
 const path = require('path');
-const webpack = require('webpack');
-const {optimize} = webpack;
-const {UglifyJsPlugin} = optimize;
-
 const dir = './lib';
 
 const {env} = process;
@@ -16,14 +12,7 @@ const devtool = 'source-map';
 const notEmpty = (a) => a;
 const clean = (array) => array.filter(notEmpty);
 
-const plugins = clean([
-    !isDev && new UglifyJsPlugin({
-        sourceMap: true,
-        comments: false,
-    }),
-]);
-
-const loaders = [{
+const rules = [{
     test: /\.js$/,
     exclude: /node_modules/,
     loader: 'babel-loader',
@@ -41,12 +30,10 @@ module.exports = {
         filename,
         path: dist,
         pathinfo: true,
-        libraryTarget: 'var',
         devtoolModuleFilenameTemplate,
     },
-    plugins,
     module: {
-        loaders,
+        rules,
     },
 };
 
