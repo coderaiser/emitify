@@ -1,3 +1,21 @@
+2020.01.06, v4.0.0
+
+feature:
+- (emitify) drop support of legacy
+- (package) nodemon v2.0.2
+- (package) nyc v15.0.0
+- (package) eslint v6.8.0
+- (package) nyc v14.0.0
+- (package) nyc v12.0.2
+- (package) redrun v6.0.0
+- (package) webpack v4.1.0
+- (package) coveralls v3.0.0
+- (package) webpack v3.0.0
+- (package) nyc v11.0.2
+- (package) eslint v4.0.0
+- (gitignore) package-lock.json
+
+
 2017.05.17, v3.1.0
 
 feature:
