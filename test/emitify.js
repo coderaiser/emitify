@@ -1,7 +1,7 @@
 'use strict';
 
 const Emitify = require('..');
-const test = require('tape');
+const test = require('supertape');
 
 test('on', (t) => {
     const emitify = Emitify();
@@ -60,19 +60,20 @@ test('once', (t) => {
 
 test('on error: no listeners', (t) => {
     const emitify = Emitify();
-    const fn  = () => {
+    const fn = () => {
         emitify.emit('error', Error('Some error!'));
     };
-   
+    
     t.throws(fn, /Some error!/, 'should throw exception');
     t.end();
 });
 
 test('off', (t) => {
-    const emitify = Emitify(),
-        fn      = () => {
-            t.fail('listener should be off');
-        };
+    const emitify = Emitify();
+    
+    const fn = () => {
+        t.fail('listener should be off');
+    };
     
     emitify
         .on('event', fn)
@@ -84,10 +85,11 @@ test('off', (t) => {
 });
 
 test('removeAllListeners', (t) => {
-    const emitify = Emitify(),
-        fn      = () => {
-            t.fail('listener should be off');
-        };
+    const emitify = Emitify();
+    
+    const fn = () => {
+        t.fail('listener should be off');
+    };
     
     emitify
         .on('event', fn)
@@ -104,7 +106,7 @@ test('removeAllListeners: no arguments', (t) => {
     const fn = () => {
         emitify.removeAllListeners();
     };
-   
+    
     t.throws(fn, /event should be string!/, 'should throw when not string');
     t.end();
 });
@@ -114,7 +116,7 @@ test('on, addListener: no arguments', (t) => {
     const fn = () => {
         emitify.on();
     };
-   
+    
     t.throws(fn, /event should be string!/, 'should throw when not string');
     t.end();
 });
@@ -124,7 +126,7 @@ test('on, addListener: no listener', (t) => {
     const fn = () => {
         emitify.on('error');
     };
-   
+    
     t.throws(fn, /callback should be function!/, 'should throw when not function');
     t.end();
 });
@@ -136,6 +138,6 @@ test('emit: no listeners', (t) => {
     };
     
     t.equal(fn(), emitify, 'should return emitify');
-   
+    
     t.end();
 });

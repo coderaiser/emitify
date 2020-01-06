@@ -59,14 +59,6 @@ emitter.emit('data', 'hello');
 emitter.off('data', log);
 ```
 
-## Environments
-
-In old `node.js` environments that not fully supports `es2015`, `emitify` could be used with:
-
-```js
-var typos = require('emitify/legacy');
-```
-
 ## License
 
 MIT

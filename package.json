@@ -14,6 +14,9 @@
     "watch:lint": "madrun watch:lint",
     "watch:coverage": "madrun watch:coverage"
   },
+  "engines": {
+    "node": ">=8"
+  },
   "repository": {
     "type": "git",
     "url": "git://github.com/coderaiser/emitify.git"
