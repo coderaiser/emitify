@@ -6,7 +6,6 @@ Dead simple event emitter.
 
 ```
 npm i emitify --save
-bower i emitify --save
 ```
 
 ## API
