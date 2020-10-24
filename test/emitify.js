@@ -11,7 +11,7 @@ test('on', async (t) => {
     const emitify = Emitify();
     const emit = emitify.emit.bind(emitify);
     
-    wait(emit, 'event')
+    wait(emit, 'event');
     await once(emitify, 'event');
     
     t.end();
