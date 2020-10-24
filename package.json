@@ -32,6 +32,8 @@
   },
   "homepage": "https://github.com/coderaiser/emitify",
   "devDependencies": {
+    "@cloudcmd/stub": "^3.1.0",
+    "@iocmd/wait": "^1.0.0",
     "coveralls": "^3.0.0",
     "eslint": "^7.12.0",
     "eslint-plugin-node": "^11.0.0",

@@ -1,16 +1,20 @@
 'use strict';
 
+const {once} = require('events');
+const wait = require('@iocmd/wait');
+const stub = require('@cloudcmd/stub');
+
 const Emitify = require('..');
 const test = require('supertape');
 
-test('on', (t) => {
+test('on', async (t) => {
     const emitify = Emitify();
+    const emit = emitify.emit.bind(emitify);
     
-    emitify.on('event', () => {
-        t.end();
-    });
+    wait(emit, 'event')
+    await once(emitify, 'event');
     
-    emitify.emit('event');
+    t.end();
 });
 
 test('addListener', (t) => {
@@ -80,6 +84,15 @@ test('off', (t) => {
         .off('event', fn);
     
     emitify.emit('event');
+    
+    t.end();
+});
+
+test('off: no event', (t) => {
+    const emitify = Emitify();
+    const fn = stub();
+    
+    emitify.off('event', fn);
     
     t.end();
 });
