@@ -39,7 +39,7 @@
     "madrun": "^7.0.4",
     "nodemon": "^2.0.2",
     "nyc": "^15.0.0",
-    "putout": "^7.4.1",
+    "putout": "^10.2.1",
     "supertape": "^1.2.4"
   },
   "dependencies": {}
